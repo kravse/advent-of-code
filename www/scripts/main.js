@@ -1,1 +1,1 @@
-var answer,i,inputStr,leading;for(inputStr=puzzle4,leading="",i=0;"00000"!==leading;)leading=md5(puzzle4+i).substring(0,5),i++;answer=i,$(".output").html(answer);
+var answer,i,inputStr,leading;for(inputStr=puzzle4,leading="",i=0;"00000"!==leading;)i++,leading=md5(puzzle4+i).substring(0,5);answer=i,$(".output").html(answer);
