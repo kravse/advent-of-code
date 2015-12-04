@@ -104,7 +104,6 @@
 
 
 coords = [0, 0]
-
 coords2 = [0, 0]
 
 beenTo = []
@@ -117,69 +116,55 @@ i = 0
 
 if(i%2 == 0)
   id = String(coords[0])+String(coords[1])
-  console.log 'santa id: ' + id
 else
   id = String(coords2[0])+String(coords2[1])
-  console.log 'robot id: ' + id
 
+console.log coords, coords2
 
 if(beenTo.indexOf(id)== -1) 
+  console.log 'unique: ',  id
   uniqueHouses++
-  console.log('unique')
   beenTo.push(id)
 
-while i<inputStr.length
-  console.log 'santa: ', coords, ' robot: ', coords2
 
+while i<inputStr.length
   current = inputStr[i]
 
   switch(current)
     when '>'
       if(i%2 == 0)
         coords[0]++
-        console.log 'santa move ' + current
       else
-        console.log 'robot move ' + current
         coords2[0]++
     when '<'
       if(i%2 == 0)
         coords[0]--
-        console.log 'santa move ' + current
       else
-        console.log 'robot move ' + current
         coords2[0]--
     when '^'
       if(i%2 == 0)
         coords[1]++
-        console.log 'santa move ' + current
       else
-        console.log 'robot move ' + current
         coords2[1]++
     when 'v'
       if(i%2 == 0)
         coords[1]--
-        console.log 'santa move ' + current
 
       else
-        console.log 'robot move ' + current
         coords2[1]--
-
+  
   if(i%2 == 0)
     id = String(coords[0])+String(coords[1])
-    console.log 'santa id: ' + id
   else
     id = String(coords2[0])+String(coords2[1])
-    console.log 'robot id: ' + id
 
+  console.log coords, coords2
+  console.log 'id: ', id
 
   if(beenTo.indexOf(id)== -1) 
+    console.log 'unique: ',  id
     uniqueHouses++
-    console.log('uniuqe')
     beenTo.push(id)
-
-
-  console.log 'end: santa: ', coords, ' robot: ', coords2
-  console.log '-----'
 
   i++
 
