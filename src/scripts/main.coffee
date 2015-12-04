@@ -53,10 +53,16 @@ uniqueHouses = 0
 id = ''
 
 inputStr = puzzle3
-  
-i = inputStr.length
-while i--
+i = 0
+
+while i<inputStr.length
   current = inputStr[i]
+
+  id = String(coords[0])+String(coords[1])
+  if(beenTo.indexOf(id)== -1) 
+    uniqueHouses++
+    beenTo.push(String(coords[0])+String(coords[1]))
+  
   switch(current)
     when '>'
       coords[0]++
@@ -65,13 +71,9 @@ while i--
     when '^'
       coords[1]++
     when 'v'
-      coords[0]--
+      coords[1]--
 
-  id = String(coords[0])+String(coords[1])
-  
-  if(beenTo.indexOf(id)== -1) 
-    uniqueHouses++
-    beenTo.push(String(coords[0])+String(coords[1]))
+  i++
 
 answer = uniqueHouses
 
