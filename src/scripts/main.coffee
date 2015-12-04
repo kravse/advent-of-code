@@ -4,41 +4,62 @@
 
 # inputStr = puzzle1
 # start = 0
+# part2 = false
 
-# i = inputStr.length
-# while i--
+# i = 0
+# while i<inputStr.length
 #   if inputStr[i] is '('
 #     start++
 #   else if inputStr[i] is ')'
 #     start--
 
-# answer = start
+#   # part 2
+#   if ((start<0) && (part2 == false))
+#     basement = i+1
+#     part2 = true
+
+
+#   i++
+
+# answer = i
+# answer2 = basement
 
 #--------------------------------------#
 # start day 2. 
 #--------------------------------------#
 
-# inputStr = puzzle2
+inputStr = puzzle2
 
-# presents = inputStr.split(' ');
+presents = inputStr.split(' ');
 
-# i = presents.length
-# paper = 0
+i = presents.length
+paper = 0
 
-# while i--
+while i--
 
-#   thing = presents[i] 
-#   sides = thing.split('x')
+  thing = presents[i] 
+  sides = thing.split('x')
 
-#   paper+= (2*sides[0]*sides[1] + 2*sides[1]*sides[2] + 2*sides[0]*sides[2])
-#   biggest = Math.max.apply( Math, sides )
+  # part 1
+  # paper+= (2*sides[0]*sides[1] + 2*sides[1]*sides[2] + 2*sides[0]*sides[2])
+  # biggest = Math.max.apply( Math, sides )
 
-#   sides.splice(sides.indexOf(String(biggest)), 1)
+  # sides.splice(sides.indexOf(String(biggest)), 1)
 
-#   paper+= sides[0]*sides[1]
+  # paper+= sides[0]*sides[1]
 
 
-# answer = paper
+  # part 2
+
+  paper+= sides[0]*sides[1]*sides[2]
+  
+  biggest = Math.max.apply( Math, sides )
+  sides.splice(sides.indexOf(String(biggest)), 1)
+
+  paper += (sides[0]*2) + (sides[1]*2)
+
+
+answer = paper
 
 
 #--------------------------------------#
@@ -82,15 +103,15 @@
 #--------------------------------------#
 # start day 4. 
 #--------------------------------------#
-inputStr = puzzle4
+# inputStr = puzzle4
 
-leading = ''
-i = 0
+# leading = ''
+# i = 0
 
-while (leading != '00000')
-  i++
-  leading = md5(puzzle4+i).substring(0,5)
+# while (leading != '00000')
+#   i++
+#   leading = md5(puzzle4+i).substring(0,5)
 
-answer = i
+# answer = i
 
 $('.output').html answer 

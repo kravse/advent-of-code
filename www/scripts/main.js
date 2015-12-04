@@ -1,1 +1,1 @@
-var answer,i,inputStr,leading;for(inputStr=puzzle4,leading="",i=0;"00000"!==leading;)i++,leading=md5(puzzle4+i).substring(0,5);answer=i,$(".output").html(answer);
+var answer,biggest,i,inputStr,paper,presents,sides,thing;for(inputStr=puzzle2,presents=inputStr.split(" "),i=presents.length,paper=0;i--;)thing=presents[i],sides=thing.split("x"),paper+=sides[0]*sides[1]*sides[2],biggest=Math.max.apply(Math,sides),sides.splice(sides.indexOf(String(biggest)),1),paper+=2*sides[0]+2*sides[1];answer=paper,$(".output").html(answer);
