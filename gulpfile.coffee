@@ -129,7 +129,6 @@ gulp.task 'scripts', () ->
 
   # Main Scripts
   gulp.src(paths.src.scripts)
-    .pipe(plugins.concat('main.min.js'))
     .pipe(plugins.coffee( bare: true ))
     .on('error', errorHandler)
     .pipe(uglify())
