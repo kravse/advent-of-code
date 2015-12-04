@@ -45,37 +45,51 @@
 # start day 3. 
 #--------------------------------------#
 
-coords = [0, 0]
+# coords = [0, 0]
 
-beenTo = []
+# beenTo = []
 
-uniqueHouses = 0
-id = ''
+# uniqueHouses = 0
+# id = ''
 
-inputStr = puzzle3
-i = 0
+# inputStr = puzzle3
+# i = 0
 
-while i<inputStr.length
-  current = inputStr[i]
+# while i<inputStr.length
+#   current = inputStr[i]
 
-  id = String(coords[0])+String(coords[1])
-  if(beenTo.indexOf(id)== -1) 
-    uniqueHouses++
-    beenTo.push(String(coords[0])+String(coords[1]))
+#   id = String(coords[0])+String(coords[1])
+#   if(beenTo.indexOf(id)== -1) 
+#     uniqueHouses++
+#     beenTo.push(String(coords[0])+String(coords[1]))
   
-  switch(current)
-    when '>'
-      coords[0]++
-    when '<'
-      coords[0]--
-    when '^'
-      coords[1]++
-    when 'v'
-      coords[1]--
+#   switch(current)
+#     when '>'
+#       coords[0]++
+#     when '<'
+#       coords[0]--
+#     when '^'
+#       coords[1]++
+#     when 'v'
+#       coords[1]--
 
+#   i++
+
+# answer = uniqueHouses
+
+
+
+#--------------------------------------#
+# start day 4. 
+#--------------------------------------#
+inputStr = puzzle4
+
+leading = ''
+i = 0
+while (leading != '00000')
+  leading = md5(puzzle4+i).substring(0,5)
   i++
 
-answer = uniqueHouses
-
+answer = i
 
 $('.output').html answer 

@@ -45,7 +45,7 @@ paths           =
     images        : './src/images/**/*.{gif,png,jpeg,jpg}'
     templates     : './src/**/*.jade'
     # libs        : ['', '']
-    # scriptLibs  : ['', '']
+    scriptLibs    : './node_modules/js-md5/build/md5.min.js'
     jquery        : './node_modules/jquery/dist/jquery.min.js'
   build           :
     scripts       : './www/scripts/'
@@ -112,15 +112,15 @@ gulp.task 'templates', () ->
 
 gulp.task 'scripts', () ->
   # Libraries
-  # files = paths.src.scriptLibs
+  files = paths.src.scriptLibs
   # files = files.concat([])
 
-  # gulp.src(files)
-  #   .pipe(plugins.concat('libs.min.js'))
-  #   .on('error', errorHandler)
-  #   .pipe(uglify())
-  #   .pipe(gulp.dest(paths.build.scripts))
-  #   .pipe(plugins.livereload( auto: false ))
+  gulp.src(files)
+    .pipe(plugins.concat('libs.min.js'))
+    .on('error', errorHandler)
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.build.scripts))
+    .pipe(plugins.livereload( auto: false ))
 
   #jQuery backup
   gulp.src(paths.src.jquery)
