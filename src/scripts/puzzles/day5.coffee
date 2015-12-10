@@ -1,48 +1,48 @@
 #--------------------------------------#
 # start day 5.
 #--------------------------------------#
-inputStr = puzzle5.split(' ')
+# inputStr = puzzle5.split(' ')
 
 
-i = 0
+# i = 0
 
-vowels = ['a', 'e', 'i', 'o', 'u']
-badStrings = ['ab', 'cd', 'pq', 'xy']
+# vowels = ['a', 'e', 'i', 'o', 'u']
+# badStrings = ['ab', 'cd', 'pq', 'xy']
 
-goodStrings = 0
+# goodStrings = 0
 
-while (i < inputStr.length)
-  currentStr = inputStr[i]
+# while (i < inputStr.length)
+#   currentStr = inputStr[i]
   
-  doubleLetter = false
-  step2 = false
-  prevLetter = false
-  vowelCount = 0
-  noBadStrings = true
+#   doubleLetter = false
+#   step2 = false
+#   prevLetter = false
+#   vowelCount = 0
+#   noBadStrings = true
 
-  for letter in currentStr
-    lastTwo = false
+#   for letter in currentStr
+#     lastTwo = false
     
-    if(vowels.indexOf(letter)!= -1)
-      vowelCount++
+#     if(vowels.indexOf(letter)!= -1)
+#       vowelCount++
 
-    if(prevLetter == letter && doubleLetter == false)
-      doubleLetter = true
+#     if(prevLetter == letter && doubleLetter == false)
+#       doubleLetter = true
 
-    if(prevLetter)
-      lastTwo = prevLetter + letter
+#     if(prevLetter)
+#       lastTwo = prevLetter + letter
 
-    if(badStrings.indexOf(lastTwo)!= -1)
-      noBadStrings = false
+#     if(badStrings.indexOf(lastTwo)!= -1)
+#       noBadStrings = false
 
 
-    prevLetter = letter
+#     prevLetter = letter
   
-  if noBadStrings
-    if doubleLetter && vowelCount > 2
-      goodStrings++
+#   if noBadStrings
+#     if doubleLetter && vowelCount > 2
+#       goodStrings++
 
-  i++
+#   i++
 
 
-answer = goodStrings
+# answer = goodStrings
