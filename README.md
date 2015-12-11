@@ -2,4 +2,4 @@ Working through the problems 1 at a time for [advent of code](http://adventofcod
 
 Puzzle inputs are in puzzleinputs.coffee
 
-Solutions are in main.coffee
+Solutions are in src/scripts/puzzles
