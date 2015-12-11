@@ -28,12 +28,10 @@ while a < arrayLength
 
 console.log "Matrix initialized"
 
-
 lightSwitch = (nums, opp) ->
 
   start = nums[0].split(',')
   finish = nums[1].split(',')
-
   
   xS = parseInt(start[0])
   xF = parseInt(finish[0])
@@ -45,7 +43,8 @@ lightSwitch = (nums, opp) ->
     when 'off'
       newVal = 0
     when 'toggle'
-      newVal = 'togg'
+      newVal = -1
+
   
   while xS < xF+1
 
@@ -53,15 +52,13 @@ lightSwitch = (nums, opp) ->
     yF = parseInt(finish[1])
 
     while yS < yF+1
-      if(newVal)
-        if(newVal == 'togg')
-          if matrix[xS][yS] == 1
-            matrix[xS][yS] = 0
-          else
-            matrix[xS][yS] = 1
+      if newVal < 0
+        if matrix[xS][yS] == 1
+          matrix[xS][yS] = 0
         else
-          matrix[xS][yS] = newVal
-
+          matrix[xS][yS] = 1
+      else if newVal > 0
+        matrix[xS][yS] = newVal
       yS++
 
     xS++
@@ -70,7 +67,6 @@ opp = false
 
 while (i < inputStr.length)
   currentStr = inputStr[i]
-  newState = false
 
   switch(currentStr)
     when 'turn'
