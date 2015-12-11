@@ -1,5 +1,5 @@
 #--------------------------------------#
-# start day 5.
+# start day 6.
 #--------------------------------------#
 
 
@@ -45,19 +45,19 @@ lightSwitch = (nums, opp) ->
     when 'toggle'
       newVal = -1
 
-  
-  while xS < xF+1
+
+  while xS <= xF
 
     yS = parseInt(start[1])
     yF = parseInt(finish[1])
 
-    while yS < yF+1
+    while yS <= yF
       if newVal < 0
         if matrix[xS][yS] == 1
           matrix[xS][yS] = 0
         else
           matrix[xS][yS] = 1
-      else if newVal > 0
+      else if newVal >= 0
         matrix[xS][yS] = newVal
       yS++
 
