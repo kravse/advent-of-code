@@ -41,9 +41,9 @@ lightSwitch = (nums, opp) ->
     when 'on'
       newVal = 1
     when 'off'
-      newVal = 0
-    when 'toggle'
       newVal = -1
+    when 'toggle'
+      newVal = 2
 
 
   while xS <= xF
@@ -52,13 +52,11 @@ lightSwitch = (nums, opp) ->
     yF = parseInt(finish[1])
 
     while yS <= yF
-      if newVal < 0
-        if matrix[xS][yS] == 1
-          matrix[xS][yS] = 0
-        else
-          matrix[xS][yS] = 1
-      else if newVal >= 0
-        matrix[xS][yS] = newVal
+      matrix[xS][yS] += newVal
+      
+      if matrix[xS][yS] < 0 
+        matrix[xS][yS] = 0
+
       yS++
 
     xS++
@@ -96,8 +94,7 @@ while a < arrayLength
   b = 0
 
   while b < arrayLength
-    if matrix[a][b] == 1
-      answer++
+    answer += matrix[a][b]
     b++
 
   a++ 
