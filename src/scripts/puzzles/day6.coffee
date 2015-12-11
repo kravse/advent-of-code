@@ -26,7 +26,7 @@ while a < arrayLength
 
   a++ 
 
-console.log "Matrix initialized"
+biggestNum = 0
 
 lightSwitch = (nums, opp) ->
 
@@ -56,6 +56,9 @@ lightSwitch = (nums, opp) ->
       
       if matrix[xS][yS] < 0 
         matrix[xS][yS] = 0
+
+      if matrix[xS][yS] > biggestNum
+        biggestNum = matrix[xS][yS]
 
       yS++
 
@@ -89,16 +92,22 @@ while (i < inputStr.length)
 
 a = 0
 answer = 0
+outputString = ''
+
 
 while a < arrayLength
   b = 0
-
+  outputString += '<div class="row">'
+    
   while b < arrayLength
-    answer += matrix[a][b]
+    # answer += matrix[a][b]
+    opacity = matrix[a][b]/biggestNum 
+    outputString += '<div style="opacity:'+opacity+';"></div>'
     b++
 
+  outputString += '</div>'
   a++ 
 
-
+$('.matrix').html(outputString)
 
   # do math
